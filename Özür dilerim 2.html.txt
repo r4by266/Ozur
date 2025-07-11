@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Özür Dilerim</title>
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/IY6FExE.jpg'); /* Çiçekli arka plan */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    p {
+      font-size: 22px;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    button {
+      padding: 15px 35px;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    #yes {
+      background-color: #a0e6a0;
+      color: #155724;
+    }
+
+    #no {
+      background-color: #f08080;
+      color: #721c24;
+    }
+
+    #thanks {
+      margin-top: 50px;
+      font-size: 26px;
+      font-weight: bold;
+      color: #fff;
+      display: none;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .flower {
+      position: fixed;
+      width: 30px;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Akşam dediklerim için özür dilerim 💐</h1>
+  <p>Lütfen özrümü kabul et ve aşağıda belirt.</p>
+
+  <div class="buttons">
+    <button id="yes">Evet</button>
+    <button id="no">Hayır</button>
+  </div>
+
+  <div id="thanks">Özrümü kabul ettiğin için çok teşekkür ederimmmm 💐💐</div>
+
+  <script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const thanks = document.getElementById("thanks");
+
+    yesBtn.onclick = () => {
+      thanks.style.display = "block";
+
+      for (let i = 0; i < 20; i++) {
+        const flower = document.createElement("img");
+        flower.src = "https://i.imgur.com/OZxKZ9R.png"; // çiçek PNG
+        flower.classList.add("flower");
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.top = "-50px";
+        flower.style.animationDuration = (Math.random() * 2 + 2) + "s";
+        document.body.appendChild(flower);
+        setTimeout(() => flower.remove(), 4000);
+      }
+    };
+
+    noBtn.onclick = () => {
+      window.location.href = "hayir.html";
+    };
+  </script>
+
+</body>
+</html>

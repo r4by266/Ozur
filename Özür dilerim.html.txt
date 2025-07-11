@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yanlış Seçim</title>
+  <style>
+    body {
+      background-color: #ffdddd;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 150px;
+      color: #990000;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Yanlış seçeneğe tıkladın</h1>
+  <p>Tekrar karar ver lütfen 🙏 🥺</p>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "ozur.html";
+    }, 5000);
+  </script>
+
+</body>
+</html>
